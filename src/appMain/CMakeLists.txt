@@ -173,7 +173,7 @@ add_dependencies(${PROJECT} Policy)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/log4cxx.properties DESTINATION ${CMAKE_INSTALL_SYSCONFDIR}/smartdevicelink COMPONENT config)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/audio.8bit.wav DESTINATION ${CMAKE_INSTALL_SYSCONFDIR}/smartdevicelink COMPONENT config)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/test.txt DESTINATION ${CMAKE_INSTALL_SYSCONFDIR}/smartdevicelink COMPONENT config)
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/smartDeviceLink-bt.ini DESTINATION ${CMAKE_INSTALL_SYSCONFDIR}/smartdevicelink  COMPONENT config)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/smartDeviceLink.ini DESTINATION ${CMAKE_INSTALL_SYSCONFDIR}/smartdevicelink  COMPONENT config)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/hmi_capabilities.json DESTINATION ${CMAKE_INSTALL_SYSCONFDIR}/smartdevicelink  COMPONENT config)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/sdl_preloaded_pt.json DESTINATION ${CMAKE_INSTALL_SYSCONFDIR}/smartdevicelink  COMPONENT config)
 
@@ -191,7 +191,7 @@ if(EXISTS ${CMAKE_SOURCE_DIR}/.git)
       WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
       OUTPUT_VARIABLE GITCOMMIT ERROR_QUIET
       OUTPUT_STRIP_TRAILING_WHITESPACE)
-    set(INI_FILE ${CMAKE_CURRENT_BINARY_DIR}/smartDeviceLink-bt.ini)
+    set(INI_FILE ${CMAKE_CURRENT_BINARY_DIR}/smartDeviceLink.ini)
     if(EXISTS ${INI_FILE})
       file(READ ${INI_FILE} FILE_CONTENT)
       set(LINE SDLVersion)
@@ -225,7 +225,7 @@ endif ()
 # Install rules
 install(TARGETS ${PROJECT} DESTINATION bin)
 install(
-  FILES log4cxx.properties audio.8bit.wav test.txt smartDeviceLink-bt.ini
+  FILES log4cxx.properties audio.8bit.wav test.txt smartDeviceLink.ini
     hmi_capabilities.json sdl_preloaded_pt.json sample_policy_manager.py
     ${CMAKE_SOURCE_DIR}/mycert.pem ${CMAKE_SOURCE_DIR}/mykey.pem
   #DESTINATION bin
