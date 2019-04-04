@@ -30,7 +30,7 @@
 
 cmake_minimum_required(VERSION 2.8.11)
 
-set (PROJECT smartDeviceLinkCore-bt)
+set (PROJECT smartDeviceLinkCore)
 #project (${PROJECT})
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/tools/cmake/modules/")
 
@@ -41,8 +41,8 @@ include(${CMAKE_SOURCE_DIR}/tools/cmake/helpers/platform.cmake)
 set (HMI "web" CACHE STRING "HMI type")
 option(EXTENDED_MEDIA_MODE "Turn on and off extended Madia Manager features relates to PulseAudio A2DP and GStreamer" OFF)
 option(BUILD_SHARED_LIBS "Build all libraries as shared (if ON) or static (if OFF)" OFF)
-option(BUILD_BT_SUPPORT "Bluetooth support" ON)
-option(BUILD_USB_SUPPORT "libusb support" OFF)
+option(BUILD_BT_SUPPORT "Bluetooth support" OFF)
+option(BUILD_USB_SUPPORT "libusb support" ON)
 option(BUILD_CLOUD_APP_SUPPORT "Cloud App Transport Support" ON)
 option(BUILD_BACKTRACE_SUPPORT "backtrace support" ON)
 option(BUILD_TESTS "Possibility to build and run tests" OFF)
